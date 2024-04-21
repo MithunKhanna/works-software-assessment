@@ -1,16 +1,17 @@
 import { Request } from "express";
 import noteModel from "../model/noteModel";
 
-
+// Return all notes
 const findAllNotes = async () => {
     return noteModel.find();
 }
 
+// Return a note bt Id
 const findById = async (req: Request) => {
     return noteModel.findById(req.params.id);
-
 }
 
+// Create a new Note
 const createNotes = async (req: Request) => {
 
     const newNote = new noteModel(req.body);
@@ -19,6 +20,7 @@ const createNotes = async (req: Request) => {
 
 }
 
+// Update existing note by Id
 const updateNote = async (req: Request) => {
     return noteModel.findByIdAndUpdate(req.params.id,
         { ...req.body, updatedAt: new Date() },
@@ -27,6 +29,7 @@ const updateNote = async (req: Request) => {
 
 }
 
+// Delete a node by Id
 const deleteNote = async (req: Request) => {
     return noteModel.findByIdAndDelete(req.params.id);
 }

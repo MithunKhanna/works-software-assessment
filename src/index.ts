@@ -4,9 +4,9 @@ import connectToMongoDB from './repository/mongoDBConnection';
 import router from './route/route';
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
-
+// Connect to mongoDb
 connectToMongoDB();
 
 app.use(bodyParser.json());

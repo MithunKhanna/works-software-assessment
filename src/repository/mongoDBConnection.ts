@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import config from "../config/config";
 
+// Connect to MondoDb
 const connectToDatabase = async () => {
-    const mongo_db_URI = 'mongodb+srv://root:Broccoli67@clustermit.x6pozd4.mongodb.net/sandbox?retryWrites=true&w=majority&appName=ClusterMit';
+    const mongo_db_URI = config.MONGODB_CONNECTION_STRING;
     try {
         mongoose
         .connect(mongo_db_URI);
