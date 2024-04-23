@@ -17,7 +17,7 @@ router.get('/', async (req: Request, res: Response) => {
         const notes = await findAllNotes();
         if(notes != null && notes.length == 0){
             res.status(HTTP_STATUSCODES.OK).json({message: `No notes present, please create a new note!`})
-        }
+        } else
         res.status(HTTP_STATUSCODES.OK).json(notes);
     } catch (error) {
         res.status(HTTP_STATUSCODES.INTERNAL_SERVER_ERROR).json({message: error})
