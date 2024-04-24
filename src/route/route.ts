@@ -20,6 +20,7 @@ router.get('/', async (req: Request, res: Response) => {
         } else
         res.status(HTTP_STATUSCODES.OK).json(notes);
     } catch (error) {
+
         res.status(HTTP_STATUSCODES.INTERNAL_SERVER_ERROR).json({message: error})
     }
 });
@@ -38,7 +39,7 @@ router.get('/:id', async (req: Request, res: Response) => {
         const note = await findById(req);
         if(!note){
             res.status(HTTP_STATUSCODES.NOT_FOUND).json({message: `Note with id: ${req.params.id} not found`})
-        }
+        } else
         res.status(HTTP_STATUSCODES.OK).json(note);
     } catch (error) {
         res.status(HTTP_STATUSCODES.INTERNAL_SERVER_ERROR).json({message: error})
@@ -55,7 +56,7 @@ router.get('/:id', async (req: Request, res: Response) => {
 router.post('/', async (req: Request, res: Response) => {
     try {
         const createdNote = await createNotes(req);
-        res.status(HTTP_STATUSCODES.OK).json(createdNote);
+        res.status(HTTP_STATUSCODES.CREATED).json(createdNote);
     } catch (error) {
         res.status(HTTP_STATUSCODES.INTERNAL_SERVER_ERROR).json({message: error})
     }
@@ -92,7 +93,6 @@ router.put('/:id', async (req: Request, res: Response) => {
 router.delete('/:id', async (req: Request, res: Response) => {
     try {
         const deletedNote = await deleteNote(req);
-        console.log(deletedNote);
         if(!deletedNote){
             res.status(HTTP_STATUSCODES.NOT_FOUND).json({message: `Note with id: ${req.params.id} not found`})
         } else

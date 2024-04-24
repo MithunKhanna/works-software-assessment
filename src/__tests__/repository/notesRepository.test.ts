@@ -110,7 +110,7 @@ describe("repository", () => {
 
                 noteModel.findByIdAndDelete = findByIdAndDelete
 
-                const result = await deleteNote(req);
+                const result = await deleteNote (req);
 
                 expect(result).toEqual(expect.objectContaining(mockedNote));
                 expect(findByIdAndDelete).toHaveBeenCalled();
