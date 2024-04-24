@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "ae9a2843-2792-4585-b9a8-529cb6a56a59",
+		"name": "Mongoose",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32596671"
+	},
+	"item": [
+		{
+			"name": "Find all notes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_base_url}}/api/v1/note",
+					"host": [
+						"{{local_base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"note"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find a note by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_base_url}}/api/v1/note/6623e8c926c97af5b1367fc1",
+					"host": [
+						"{{local_base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"note",
+						"6623e8c926c97af5b1367fc1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Lecture 3 CSCI\",\r\n    \"body\": \"Write book\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_base_url}}/api/v1/note",
+					"host": [
+						"{{local_base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"note"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update note by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\": \"I started something\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_base_url}}/api/v1/note/6623e8c926c97af5b1367fc1",
+					"host": [
+						"{{local_base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"note",
+						"6623e8c926c97af5b1367fc1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete note by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{local_base_url}}/api/v1/note/66286bdaa8d614121ee92dbe",
+					"host": [
+						"{{local_base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"note",
+						"66286bdaa8d614121ee92dbe"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
