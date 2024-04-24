@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
 import connectToMongoDB from '../repository/mongoDBConnection';
 import bodyParser from 'body-parser';
 import router from '../route/route';

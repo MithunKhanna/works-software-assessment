@@ -1,7 +1,3 @@
-
-import bodyParser from 'body-parser';
-import connectToMongoDB from './repository/mongoDBConnection';
-import router from './route/route';
 import createServer from './util/server';
 
 const app = createServer()

@@ -1,6 +1,5 @@
 import supertest = require("supertest");
 import createServer from "../../util/server";
-import exp = require("constants");
 
 const app = createServer();
 
